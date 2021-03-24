@@ -10,7 +10,7 @@ workflow CreateSTRetchDecoyGenome {
     File RefFasta
     File ref_fasta_index
     String fastaName = basename(RefFasta, ".fasta")
-    String gotc_docker = "gcr.io/engaged-truth-267819/stretch:0.4.0"
+    String gotc_docker = "bharatij/stretch_pipeline:stretch"
     Int preemptible_tries = 3
     #Generate STR decoy chromosomes
     call RunSTRDecoyFasta { 

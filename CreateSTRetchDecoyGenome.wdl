@@ -49,12 +49,12 @@ task RunSTRDecoyFasta {
     Int disk_size = ceil(size(RefFasta, "GB") + size(ref_fasta_index, "GB")) + addtional_disk_size
    
     command <<<
-   	/STRetch-0.4.0/tools/bin/python /STRetch-0.4.0/scripts/decoy_STR.py --length 2000 > STRdecoys.fasta                
+   	/STRetch-master/tools/bin/python /STRetch-master/scripts/decoy_STR.py --length 2000 > STRdecoys.fasta                
         cat ${RefFasta} STRdecoys.fasta > ${fastaName}.STRdecoys.fasta                
-        /STRetch-0.4.0/tools/bin/python /STRetch-0.4.0/scripts/sort_fasta.py --infile ${fastaName}.STRdecoys.fasta --outfile ${fastaName}.STRdecoys.sorted.fasta                 
-        /STRetch-0.4.0/tools/bin/bwa index ${fastaName}.STRdecoys.sorted.fasta                
-        /STRetch-0.4.0/tools/bin/samtools faidx ${fastaName}.STRdecoys.sorted.fasta
-   	grep STR ${fastaName}.STRdecoys.sorted.fasta.fai | awk -v OFS='\t' '{ print $1, 0, $2 -1 }' | /STRetch-0.4.0/tools/bin/bedtools sort -i - > STRdecoys.sorted.bed  		              
+        /STRetch-master/tools/bin/python /STRetch-master/scripts/sort_fasta.py --infile ${fastaName}.STRdecoys.fasta --outfile ${fastaName}.STRdecoys.sorted.fasta                 
+        /STRetch-master/tools/bin/bwa index ${fastaName}.STRdecoys.sorted.fasta                
+        /STRetch-master/tools/bin/samtools faidx ${fastaName}.STRdecoys.sorted.fasta
+   	grep STR ${fastaName}.STRdecoys.sorted.fasta.fai | awk -v OFS='\t' '{ print $1, 0, $2 -1 }' | /STRetch-master/tools/bin/bedtools sort -i - > STRdecoys.sorted.bed  		              
         cut -f1,2 ${fastaName}.STRdecoys.sorted.fasta.fai > ${fastaName}.STRdecoys.sorted.fasta.genome
     >>>  
       

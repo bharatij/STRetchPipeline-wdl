@@ -59,7 +59,8 @@ task RunSTRDecoyFasta {
     >>>  
       
     runtime {
-    	docker: docker_image
+    	#docker: docker_image
+	docker:"bharatij/stretch_pipeline:stretch"
     	memory: machine_mem_size + " GB"
     	disks: "local-disk " + disk_size + " HDD"
     	cpu: "1"

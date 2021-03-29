@@ -1,6 +1,6 @@
 # STRetchPipeline-wdl
 Workflows for detecting short tandem repeat expansions using STRetch (https://github.com/Oshlack/STRetch) on Terra Platform.
-This workflows are designed for Whole Genome Sequencing starting from mapped bam/cram files.
+These workflows are designed for Whole Genome Sequencing starting from mapped bam/cram files.
 The whole pipeline is divided into three steps as follows:
 
 ### STRetchPipeline-Steps

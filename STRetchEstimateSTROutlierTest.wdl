@@ -214,7 +214,7 @@ task RunMultiTestCorrection {
         /STRetch-master/tools/bin/python /STRetch-master/scripts/MultipleTestCorrection.py \
               				--pvalfile ${sampleid}.STRs.tsv 
         
-        gzip ${sampleid}.STRs.tsv
+        gzip ${sampleid}.FDR.STRs.tsv
   >>>
 
   runtime {
@@ -227,7 +227,7 @@ task RunMultiTestCorrection {
     	continueOnReturnCode: [0,1]
   }
   output {
-    	    File sampleStr = "${sampleid}.STRs.tsv.gz"
+    	    File sampleStr = "${sampleid}.FDR.STRs.tsv.gz"
   }
 }
 

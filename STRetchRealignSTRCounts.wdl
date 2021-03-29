@@ -1,4 +1,4 @@
-#Workflow : STRetch Pipeline : Read realignment and generating STR read counts
+#Workflow : STRetchPipeline-Step2 : Read realignment and generating STR read counts
 workflow STRetchPipeline {
   String pipeline_version = "1.0"
   meta {

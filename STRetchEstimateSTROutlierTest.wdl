@@ -1,4 +1,4 @@
-#Workflow : STRetch Estimate allele size and One vs all samples outlier test on large number of WGS samples
+#Workflow : STRetchPipeline-Step3: STRetch Estimate allele size and One vs all samples outlier test on large number of WGS samples
 workflow STRetchOutlier {
 String pipeline_version = "1.0"
 meta {

@@ -1,4 +1,4 @@
-#WORKFLOW: Generate STRetch Decoy Gennome
+#WORKFLOW: Generate STRetch Decoy Gennome: STRetchPipeline-Step1
 workflow CreateSTRetchDecoyGenome {
   String pipeline_version = "1.0"
   meta {

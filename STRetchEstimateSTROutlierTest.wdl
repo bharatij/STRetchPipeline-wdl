@@ -207,14 +207,13 @@ task RunMultiTestCorrection {
   
   command <<<
    	echo "Processing: ${sampleid}" 
-   	zcat ${allStrs} | head -n1 > ${sampleid}.STRs.tsv
-    	zcat ${allStrs} | grep -w ${sampleid}  >> ${sampleid}.STRs.tsv	
-   			
+   	zcat ${allStrs} | head -n1 > /cromwell_root/${sampleid}.STRs.tsv
+   	zcat ${allStrs} | grep -w ${sampleid}  >> /cromwell_root/${sampleid}.STRs.tsv	
+	
       	PATH=$PATH:/STRetch-master/tools/bin; \ 
-        /STRetch-master/tools/bin/python /STRetch-master/scripts/MultipleTestCorrection.py \
-              				--pvalfile ${sampleid}.STRs.tsv 
+        /STRetch-master/tools/bin/python /STRetch-master/scripts/MultipleTestCorrection.py --pvalfile /cromwell_root/${sampleid}.STRs.tsv
         
-        gzip ${sampleid}.FDR.STRs.tsv
+        gzip /cromwell_root/${sampleid}.FDR.STRs.tsv
   >>>
 
   runtime {

@@ -12,15 +12,16 @@ workflow STRetchPipeline {
     File craiFile
     File TRF_BED
     String output_prefix = basename(cramFile, ".cram")
-    File ref_fasta = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/Homo_sapiens_assembly38.STRdecoys.sorted.fasta"
-    File ref_fasta_fai = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/Homo_sapiens_assembly38.STRdecoys.sorted.fasta.fai"
-    File ref_fasta_amb = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/Homo_sapiens_assembly38.STRdecoys.sorted.fasta.amb"
-    File ref_fasta_ann = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/Homo_sapiens_assembly38.STRdecoys.sorted.fasta.ann"
-    File ref_fasta_bwt = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/Homo_sapiens_assembly38.STRdecoys.sorted.fasta.bwt"
-    File ref_fasta_pac = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/Homo_sapiens_assembly38.STRdecoys.sorted.fasta.pac"
-    File ref_fasta_sa = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/Homo_sapiens_assembly38.STRdecoys.sorted.fasta.sa"
-    File ref_fasta_genome = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/Homo_sapiens_assembly38.STRdecoys.sorted.fasta.genome"
-    File STR_BED = "gs://fc-secure-8cd1d540-e839-4782-88f5-b9995ba25c66/Resources/STRetchReference/STRdecoys.sorted.bed"
+    # STRetch STRdecoy reference genome fasta and index files
+    File ref_fasta 
+    File ref_fasta_fai
+    File ref_fasta_amb
+    File ref_fasta_ann
+    File ref_fasta_bwt
+    File ref_fasta_pac
+    File ref_fasta_sa 
+    File ref_fasta_genome 
+    File STR_BED  # STRdecoys.sorted.bed"
     
     Int preemptible_tries = 3
    
